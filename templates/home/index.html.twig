@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>ESPORTS</h1>
+    <form action="http://127.0.0.1:8000/login">
+        <input type="submit" value="Connexion" name="connexion">
+    </form>
+    <form action="http://127.0.0.1:8000/player/new">
+        <input type="submit" value="Inscription" name="inscription">
+    </form>
+    <form action="http://127.0.0.1:8000/player/topdix">
+        <h2>Top 10 des joueurs</h2>
+        <input type="submit" value="Afficher"/>
+    </form>
+    
+    
+</div>
+{% endblock %}

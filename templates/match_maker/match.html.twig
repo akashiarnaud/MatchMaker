@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatchMaker index{% endblock %}
+
+{% block body %}
+    <h1>Vos Match en cours</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>PlayerA</th>
+                <th>VS</th>
+                <th>PlayerB</th>
+                <th>Date de rencontre</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for match_maker in match_makers %}
+            <tr>
+                <td>{{ match_maker.playerA.username }}</td>
+                <td> VS </td>
+                <td>{{ match_maker.playerB.username }}</td>
+                <td>{{ match_maker.encounterDate ? match_maker.encounterDate|date('Y-m-d') : '' }}</td>
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

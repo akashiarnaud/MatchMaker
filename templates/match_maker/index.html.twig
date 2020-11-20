@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MatchMaker index{% endblock %}
+
+{% block body %}
+    <h1>Liste de vos matchs en cours</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Player A</th>
+                <th>Player B</th>
+                <th>Winner</th>
+                <th>ScorePlayer1</th>
+                <th>ScorePlayer2</th>
+                <th>Status</th>
+                <th>EncounterDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for match_maker in match_makers %}
+            <tr>
+                <td>{{ match_maker.id }}</td>
+                <td>{{ match_maker.playerA.username }}</td>
+                <td>{{ match_maker.playerB.username }}</td>
+                <td>{{ match_maker.winner }}</td>
+                <td>{{ match_maker.scorePlayerA }}</td>
+                <td>{{ match_maker.scorePlayerB }}</td>
+                <td>{{ match_maker.status }}</td>
+                <td>{{ match_maker.encounterDate ? match_maker.encounterDate|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('match_maker_edit', {'id': match_maker.id}) }}">assigner_score</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="9">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('match_maker_new') }}">Create new</a>
+{% endblock %}
