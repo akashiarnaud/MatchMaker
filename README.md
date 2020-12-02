@@ -1,5 +1,8 @@
 # Enigma 2020 - 4ème année - projet API Sympfony
 
+## Concept
+Avec le framework symfony, réalisez une application pour créer un système de MatchMaking
+
 ## Install
 
 ```sh
