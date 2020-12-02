@@ -1,4 +1,4 @@
-# Enigma 2020 - 4ème année
+# Enigma 2020 - 4ème année - projet API Sympfony
 
 ## Install
 
